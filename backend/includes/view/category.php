@@ -1,13 +1,43 @@
+<?php
+/** @var $model \app\models\Category */
+/** @var $all */
+?>
+
+
 <h1>Add New Category</h1>
 
-<form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label>Category Name</label>
-        <input type="text" name="email" class="form-control">
-    </div>
+<?php $form = \app\core\form\Form::begin('', 'post') ?>
+    <?php echo $form->field($model, 'category') ?>
     <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
+        <?php echo $form->field($model, 'image')->fileField() ?>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php \app\core\form\Form::end() ?>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Category</th>
+        <th scope="col">Icon</th>
+        <th scope="col">Created At</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <?php foreach ($all as $keys ){
+        $data = get_object_vars($keys);
+    ?>
+    <tbody>
+    <tr>
+        <th scope="row"><?= $data['id'] ?></th>
+        <td><?= $data['category'] ?></td>
+        <td><img src="<?= \app\core\Application::$ROOT_DIR. "/public/upload/{$data['image']}" ?>" alt=""></td>
+        <td><?= $data['created_at'] ?></td>
+        <td><button type="button" class="btn btn-primary">Edit</button></td>
+        <td><button type="button" class="btn btn-danger">Delete</button></td>
+    </tr>
+    </tbody>
+    <?php } ?>
+</table>

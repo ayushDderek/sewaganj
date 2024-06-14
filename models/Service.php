@@ -6,14 +6,17 @@ use app\core\Application;
 use app\core\CategoryModel;
 use app\core\Model;
 
-class category extends CategoryModel
+class Service extends CategoryModel
 {
+    public string $name = '';
+    public string $description = '';
+    public int $price;
     public string $category = '';
     public string $image = '';
 
     public function tableName(): string
     {
-        return 'category';
+        return 'Services';
     }
 
     public function primaryKey(): string
@@ -23,8 +26,7 @@ class category extends CategoryModel
 
     public function save()
     {
-        $target_dir = Application::$ROOT_DIR . "/public/upload/";
-        print_r($target_dir);
+        $target_dir = Application::$ROOT_DIR . "/public/upload/services";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -70,6 +72,9 @@ class category extends CategoryModel
     public function rules(): array
     {
         return [
+            'name' => [self::RULE_REQUIRED],
+            'description' => [self::RULE_REQUIRED],
+            'price' => [self::RULE_REQUIRED],
             'category' => [self::RULE_REQUIRED],
             'image' => [self::RULE_REQUIRED]
         ];
@@ -78,14 +83,17 @@ class category extends CategoryModel
     public function labels(): array
     {
         return [
-            'category' => 'Category Name',
-            'image' => 'Choose Image'
+            'name' => 'Service Name',
+            'Description' => 'Give a Description',
+            'price' => 'Min Amount',
+            'category' => 'Category',
+            'image' => 'Choose a Service Image'
         ];
     }
 
     public function attributes(): array
     {
-        return ['category', 'image'];
+        return ['name', 'Description', 'price', 'category', 'image'];
     }
 
     public function getImagePath(): string

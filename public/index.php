@@ -43,7 +43,9 @@ $app->router->get('/profile', [AuthController::class, 'profile']);
 
 $app->router->get('/admin', [AdminController::class, 'dashboard']);
 $app->router->get('/admin/services', [AdminController::class, 'services']);
-$app->router->get('/admin/services-category', [AdminController::class, 'servicesCategory']);
+$app->router->post('/admin/services', [AdminController::class, 'services']);
+$app->router->get('/admin/services-category', [AdminController::class, 'categoryServices']);
+$app->router->post('/admin/services-category', [AdminController::class, 'categoryServices']);
 
 
 

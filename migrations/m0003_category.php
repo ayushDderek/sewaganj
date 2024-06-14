@@ -1,5 +1,5 @@
 <?php
-class m0001_initial
+class m0003_category
 {
     public function up()
     {
@@ -7,8 +7,7 @@ class m0001_initial
         $SQL = "CREATE TABLE category (
                id INT AUTO_INCREMENT PRIMARY KEY,
                category VARCHAR(255) NOT NULL,
-               img_path VARCHAR(255) NOT NULL,
-               status TINYINT NOT NULL,
+               image VARCHAR(255) NOT NULL,
                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             ) ENGINE=INNODB;";
         $db->pdo->exec($SQL);
