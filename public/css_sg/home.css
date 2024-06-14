@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+:root{
+    --primary-color: #204188;
+    --secondary-color: #9BA4B5;
+    --tertiary-color: #F6921D;
+    --text-color: #204188;
+    --background-color: #9BA4B5;
+}
+/* body{
+    background-color: var(--background-color);
+} */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins";
+    font-size: 1.1rem;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+
+}
+
+.home-services h1{
+    text-align: center;
+    color: var(--text-color);
+    margin: 1.2rem 0 0.5rem 0 ;
+    /* text-decoration: underline; */
+}
+.services-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: 1.2rem auto;
+}
+.service-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+
+}
+.service-box a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.service-box:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+    /* background-color: var(--background-color); */
+}
+.service-box>a:hover>.service-label{
+    transform: scale(1.01);
+    color: #F6921D;
+}
+.service-logo img{
+    width: 50px;
+}
+
+.aboutUs-bg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--background-color);
+}
+   
+.aboutUs{
+    margin-top: 5rem;
+}
+    
+.aboutUs-graphic img{
+    width: 30rem;
+    margin: 1rem;
+}
+
+.adoutUs-title{
+    margin: 1.2rem;
+    text-align: center;
+    color: white;
+}
+.adoutUs-title h1{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.aboutUs-para p{
+    margin: 1rem 0;
+}

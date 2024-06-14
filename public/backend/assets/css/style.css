@@ -1,0 +1,12 @@
+body {
+    background-color: red;
+}
+
+
+.sidebar-brand-icon img {
+    width: 50px;
+}
+
+.sidebar-brand-icon {
+    transform: rotate(0);
+}

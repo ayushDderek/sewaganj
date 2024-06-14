@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+   
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+main{
+  
+    width:50%;
+    box-shadow:2px 3px 2px 4px ;
+
+
+margin-top:70px;
+
+}
+form{
+margin:20px;
+}
+button.btn.btn-primary.btn-block.mb-4 {
+    background: #F6921D;
+    color:#204188;
+}
+
+button.btn.btn-primary.btn-block.mb-4 :hover{
+
+
+
+
+}
+
+
+
+
+
+
+a{
+    color:#F6921D ;
+}
+.btn-link{
+    color:#F6921D ;
+
+
+}
+main img{
+    width:50%;
+
+}
+main{
+    text-align:center;
+}
+main h1{
+    color:#204188;
+    font-family:Arial;
+}
+.form-check-label{
+    color:#204188;
+
+}
+.text-center p{
+    color:#204188;
+
+}

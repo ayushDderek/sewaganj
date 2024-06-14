@@ -1,0 +1,11 @@
+# public/.htaccess
+
+RewriteEngine On
+
+# Exclude assets directory from rewriting
+RewriteCond %{REQUEST_URI} !^/assets/
+s
+# Rewrite rule to direct all requests to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
