@@ -23,10 +23,18 @@ class AdminController extends Controller
 
     public function services(Request $request) {
         $service = new Service();
+        if ($request->isPost()){
+            $service->loadData($request->getBody());
+            if($service->validate() && $service->save()) {
+                Application::$app->session->setFlash('success', 'Service added.');
+                Application::$app->response->redirect('/admin/services');
+            }
+            return $this->renderAdmin('service', [
+                'model' => $service,
+            ]);
+        }
 
-
-
-        return $this->renderAdmin('services', [
+        return $this->renderAdmin('service', [
             'model' => $service
         ]);
     }

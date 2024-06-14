@@ -9,14 +9,14 @@ use app\core\Model;
 class Service extends CategoryModel
 {
     public string $name = '';
-    public string $description = '';
-    public int $price;
+    public string $body = '';
+    public int $price = 0;
     public string $category = '';
     public string $image = '';
 
     public function tableName(): string
     {
-        return 'Services';
+        return 'service';
     }
 
     public function primaryKey(): string
@@ -73,7 +73,7 @@ class Service extends CategoryModel
     {
         return [
             'name' => [self::RULE_REQUIRED],
-            'description' => [self::RULE_REQUIRED],
+            'body' => [self::RULE_REQUIRED],
             'price' => [self::RULE_REQUIRED],
             'category' => [self::RULE_REQUIRED],
             'image' => [self::RULE_REQUIRED]
@@ -84,7 +84,7 @@ class Service extends CategoryModel
     {
         return [
             'name' => 'Service Name',
-            'Description' => 'Give a Description',
+            'body' => 'Give a Description',
             'price' => 'Min Amount',
             'category' => 'Category',
             'image' => 'Choose a Service Image'
@@ -93,7 +93,7 @@ class Service extends CategoryModel
 
     public function attributes(): array
     {
-        return ['name', 'Description', 'price', 'category', 'image'];
+        return ['name', 'body', 'price', 'category', 'image'];
     }
 
     public function getImagePath(): string

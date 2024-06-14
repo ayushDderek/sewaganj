@@ -2,7 +2,9 @@
 
 namespace app\core;
 
-class ServiceModule
-{
+use app\core\db\DbModel;
 
+abstract class ServiceModule extends DbModel
+{
+    abstract public function getImagePath(): string;
 }
