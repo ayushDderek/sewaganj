@@ -1,6 +1,11 @@
+<?php
+/** @var $categories */
+?>
+
+
 <section class="home" id="home">
     <div class="banner">
-        <img src="assets/images/homepage-banner.png" width="100%" alt="">
+        <img src="assets/images/banner.jpg" width="100%" alt="">
     </div>
 
     <section class="home-services wrapper">
@@ -8,87 +13,21 @@
         <hr>
         <div class="our-services">
             <!-- ------------------- 1st Row ------------- -->
+
             <div class="services-row">
+                <?php
+                foreach ($categories as $keys ) :
+                $data = get_object_vars($keys);
+                ?>
                 <div class="service-box"><a href="">
                         <div class="service-logo">
-                            <img src="assets/services/home-repair.svg" alt="home-repair">
+                            <img src="../upload/<?php echo $data['image'] ?>" alt="home-repair">
                         </div>
-                        <div class="service-label">Home Repair</div></a>
+                        <div class="service-label"><?= $data['category'] ?></div></a>
                 </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
+            <?php endforeach; ?>
             </div>
-            <!-- ------------------- 2nd Row ------------- -->
-            <div class="services-row">
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/home-repair.svg" alt="home-repair">
-                        </div>
-                        <div class="service-label">Home Repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-            </div>
-            <!-- ------------------- 3rd Row ------------- -->
-            <div class="services-row">
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/home-repair.svg" alt="home-repair">
-                        </div>
-                        <div class="service-label">Home Repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-                <div class="service-box"><a href="">
-                        <div class="service-logo">
-                            <img src="assets/services/ac-repair.svg" alt="ac-repair">
-                        </div>
-                        <div class="service-label">AC repair</div></a>
-                </div>
-            </div>
-            <!-- ------------------- 4th Row ------------- -->
+
 
         </div>
     </section>

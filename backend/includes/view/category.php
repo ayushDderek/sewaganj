@@ -33,7 +33,7 @@
     <tr>
         <th scope="row"><?= $data['id'] ?></th>
         <td><?= $data['category'] ?></td>
-        <td><img src="<?= \app\core\Application::$ROOT_DIR. "/public/upload/{$data['image']}" ?>" alt=""></td>
+        <td><img width="50px" height="50px" src='<?= "../upload/{$data['image']}" ?>' alt="Home Repair"></td>
         <td><?= $data['created_at'] ?></td>
         <td><button type="button" class="btn btn-primary">Edit</button></td>
         <td><button type="button" class="btn btn-danger">Delete</button></td>

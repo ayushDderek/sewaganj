@@ -32,12 +32,14 @@ html {
     width: 100%;
     height: fit-content;
 }
+
 .nav-section, .nav-section-elements, .nav-section-login{
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     /* background-color: var(--primary-color); */
-    color: var(--text-colorx);
+    color: var(--text-color);
 }
 .nav-section-elements{
     gap: 2.5rem;
@@ -65,11 +67,31 @@ html {
     border: none;
     text-decoration: underline;
 }
-.nav-section-login>button:hover{
+.nav-section-login button a{
+    width: fit-content;
+    color: var(--text-color);
+}
+.nav-section-login>button>a:hover{
     cursor: pointer;
     color: var(--tertiary-color);
+}
+.nav-section-login button{
+    background: transparent;
+    border: none;
 }
 .nav-section-location{
     display: flex;
     align-items: center;
+}
+.warehouse{
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+.warehouse:hover{
+    color: var(--tertiary-color);
+}
+.nav-login-container{
+    display: flex;
+
 }

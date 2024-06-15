@@ -11,7 +11,6 @@ use app\models\Service;
 
 class AdminController extends Controller
 {
-
     public function __construct()
     {
         $this->registerMiddleWare(new AuthMiddleware(['profile']));
@@ -23,6 +22,7 @@ class AdminController extends Controller
 
     public function services(Request $request) {
         $service = new Service();
+        $category = new Category();
         if ($request->isPost()){
             $service->loadData($request->getBody());
             if($service->validate() && $service->save()) {
@@ -31,17 +31,20 @@ class AdminController extends Controller
             }
             return $this->renderAdmin('service', [
                 'model' => $service,
+                'data' => $service->fetchAll(),
+                'cat' => $category->fetchAll()
             ]);
         }
 
         return $this->renderAdmin('service', [
-            'model' => $service
+            'model' => $service,
+            'data' => $service->fetchAll(),
+            'cat' => $category->fetchAll()
         ]);
     }
 
     public function categoryServices(Request $request) {
         $category = new Category();
-        $data = $category->fetchAll();
         if ($request->isPost()){
 
             $category->loadData($request->getBody());
@@ -52,15 +55,14 @@ class AdminController extends Controller
                 Application::$app->response->redirect('/admin/services-category');
             }
 
-
-
             return $this->renderAdmin('category', [
                 'model' => $category,
+                'all' => $category->fetchAll()
             ]);
         }
         return $this->renderAdmin('category', [
             'model' => $category,
-            'all' => $data
+            'all' => $category->fetchAll()
         ]);
     }
 }

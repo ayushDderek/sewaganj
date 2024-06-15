@@ -5,8 +5,9 @@ namespace app\models;
 use app\core\Application;
 use app\core\CategoryModel;
 use app\core\Model;
+use app\core\ServiceModule;
 
-class Service extends CategoryModel
+class Service extends ServiceModule
 {
     public string $name = '';
     public string $body = '';
@@ -26,7 +27,7 @@ class Service extends CategoryModel
 
     public function save()
     {
-        $target_dir = Application::$ROOT_DIR . "/public/upload/services";
+        $target_dir = "../upload/services/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -72,7 +73,7 @@ class Service extends CategoryModel
     public function rules(): array
     {
         return [
-            'name' => [self::RULE_REQUIRED],
+            'name' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::class]],
             'body' => [self::RULE_REQUIRED],
             'price' => [self::RULE_REQUIRED],
             'category' => [self::RULE_REQUIRED],

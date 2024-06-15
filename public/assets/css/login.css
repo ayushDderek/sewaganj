@@ -8,10 +8,18 @@ body{
     display: flex;
     justify-content: center;
 }
+.logincontainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
 main{
   
     width:50%;
-    box-shadow:2px 3px 2px 4px ;
+    /*box-shadow:2px 3px 2px 4px ;*/
+    border: 0.8px solid;
+background-color: #f8f5f5;
 
 
 margin-top:70px;
@@ -64,3 +72,4 @@ main h1{
     color:#204188;
 
 }
+

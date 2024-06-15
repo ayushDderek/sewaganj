@@ -2,7 +2,7 @@
 /** @var $model \app\models\User */
 ?>
 
-
+<div class="logincontainer">
 <main>
     <div class="img">
         <img src="assets/images/logo.png">
@@ -65,3 +65,4 @@
 
 
 </main>
+</div>

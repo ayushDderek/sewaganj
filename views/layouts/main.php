@@ -30,19 +30,22 @@ use app\core\Application;
 <!--                <li><a href="#aboutUs">About Us</a></li>-->
 <!--                <li><a href="#contact">Contact</a></li>-->
 <!--            </div>-->
-            <div class="warehouse">
-                <a href="#"><img src="assets/images/warehouse.svg" width="30px" alt="warehouse logo">Warehouse</a>
-            </div>
+
             <div class="nav-section-location">
                 <img src="assets/images/location.svg" width="30px" alt="">
                 <input type="text" placeholder="location"></input>
             </div>
+            <div class="warehouse">
+                <a href="#" class="warehouse"><img src="assets/images/warehouse.svg" width="30px" alt="warehouse logo">Warehouse</a>
+            </div>
+            <div class="nav-login-container">
             <?php if(Application::isGuest()) : ?>
                 <div class="nav-section-login">
                     <img src="assets/images/userIcon.svg" width="30px" alt="">
                     <button type="login"><a href="/login">login / Register</a></button>
                 </div>
             <?php else: ?>
+            <div class="nav-login-container" >
                 <div class="nav-section-login">
                     <button><a href="/profile">Profile</a></button>
                 </div>
@@ -50,7 +53,9 @@ use app\core\Application;
                     <img src="assets/images/userIcon.svg" width="30px" alt="">
                     <button type="logout"><a href="/logout">Welcome <?php echo Application::$app->user->getDisplayName() ?> (Logout)</a></button>
                 </div>
+            </div>
             <?php endif; ?>
+            </div>
             <!-- </div> -->
     </nav>
     <hr>

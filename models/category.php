@@ -24,7 +24,6 @@ class category extends CategoryModel
     public function save()
     {
         $target_dir = Application::$ROOT_DIR . "/public/upload/";
-        print_r($target_dir);
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -70,8 +69,8 @@ class category extends CategoryModel
     public function rules(): array
     {
         return [
-            'category' => [self::RULE_REQUIRED],
-            'image' => [self::RULE_REQUIRED]
+            'category' => [self::RULE_REQUIRED, [self::RULE_UNIQUE, 'class' => self::Class]],
+            'image' => [self::RULE_REQUIRED],
         ];
     }
 

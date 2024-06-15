@@ -4,16 +4,20 @@ namespace app\controllers;
 
 use app\core\Application;
 use app\core\Controller;
+use app\core\db\DbModel;
 use app\core\Request;
 use app\core\Response;
+use app\models\category;
 use app\models\ContactForm;
 
 class SiteController extends Controller
 {
     public function home()
     {
+        $categories = new category();
+
         $params = [
-            'name' => "Hello"
+            'categories' => $categories->fetchAll()
         ];
         return $this->render('home', $params);
     }

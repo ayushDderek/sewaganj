@@ -39,8 +39,6 @@ $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->get('/profile', [AuthController::class, 'profile']);
 
 
-
-
 $app->router->get('/admin', [AdminController::class, 'dashboard']);
 $app->router->get('/admin/services', [AdminController::class, 'services']);
 $app->router->post('/admin/services', [AdminController::class, 'services']);
