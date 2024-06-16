@@ -27,7 +27,7 @@ class Service extends ServiceModule
 
     public function save()
     {
-        $target_dir = "../upload/services/";
+        $target_dir = "./upload/services/";
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

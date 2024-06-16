@@ -19,7 +19,7 @@
                 foreach ($categories as $keys ) :
                 $data = get_object_vars($keys);
                 ?>
-                <div class="service-box"><a href="">
+                <div class="service-box"><a href="<?php echo '/' . str_replace(' ', '-', strtolower($data['category'])); ?>">
                         <div class="service-logo">
                             <img src="../upload/<?php echo $data['image'] ?>" alt="home-repair">
                         </div>

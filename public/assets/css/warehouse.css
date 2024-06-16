@@ -1,0 +1,74 @@
+body{
+/*background-color:rgb(183, 206, 206);*/
+
+margin: 0 auto;
+
+}
+
+
+
+/*  */
+.container-ware{
+    display: block;
+    margin-left:36px;
+    margin-right:33px;
+  
+}
+
+.first-row,.second-row{
+   
+    display: flex;
+    flex-direction:row;
+gap:20px;
+
+
+/* remove */
+
+}
+
+
+
+
+.items{
+   border-radius:10px;
+    width:320px;
+    padding:15px;
+    background-color: azure;
+   
+
+}
+.items p{
+    font-family: sans-serif;
+
+}
+.items img{
+    height:150px;
+    border-radius:10px;
+    margin-bottom:10px;
+
+    
+   
+}
+.col{
+    color:#F6921D;
+    font-family: sans-serif;
+
+}
+.odlist{
+    display: flex;
+    text-wrap:nowrap;
+    gap:10px;
+    
+}
+li{
+    list-style: none;
+    color:#204188;
+    background-color:#F6921D;
+    padding:7px;
+    border-radius: 10px;
+    margin-bottom:20px;
+   
+}
+.second-row{
+    margin-top:30px;
+}

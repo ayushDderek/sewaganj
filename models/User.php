@@ -15,6 +15,7 @@ class User extends UserModel
     public int $status = self::STATUS_INACTIVE;
     public string $password = '';
     public string $confirmPassword = '';
+    public string $usertype = '';
 
     public function tableName(): string
     {
@@ -40,12 +41,13 @@ class User extends UserModel
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [self::RULE_UNIQUE, 'class'=> self::class]],
             'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 8], [self::RULE_MAX, 'max' => '24']],
             'confirmPassword' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']],
+            'usertype' => [self::RULE_REQUIRED]
         ];
     }
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['firstname', 'lastname', 'email', 'password', 'status', 'usertype'];
     }
 
     public function labels(): array
@@ -56,6 +58,7 @@ class User extends UserModel
             'email' => 'Email',
             'password' => 'Password',
             'confirmPassword' => 'Confirm Password',
+            'usertype' => 'User Type:',
 
         ];
     }

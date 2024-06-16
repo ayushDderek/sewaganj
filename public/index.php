@@ -2,6 +2,7 @@
 
 use app\controllers\AdminController;
 use app\controllers\AuthController;
+use app\controllers\ServiceController;
 use app\core\Application;
 use app\controllers\SiteController;
 
@@ -37,6 +38,11 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->get('/profile', [AuthController::class, 'profile']);
+$app->router->get('/cleaning', [ServiceController::class, 'cleaningService']);
+$app->router->post('/cleaning', [ServiceController::class, 'cleaningService']);
+$app->router->get('/salon', [ServiceController::class, 'salonService']);
+$app->router->get('/home-repair', [ServiceController::class, 'homeRepair']);
+$app->router->get('/warehouse', [ServiceController::class, 'warehouse']);
 
 
 $app->router->get('/admin', [AdminController::class, 'dashboard']);

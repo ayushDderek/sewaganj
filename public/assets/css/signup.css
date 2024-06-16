@@ -8,18 +8,23 @@ body{
     display: flex;
     justify-content: center;
 }
+.registration-container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
 main{
-  
+
     width:50%;
-    box-shadow:2px 0px 0px 4px ;
-
-
-margin-top:70px;
+    margin: 0 auto;
 
 }
 form{
-margin:20px;
+    margin:20px;
 }
+
+
 button.btn.btn-primary.btn-block.mb-4 {
     background: #F6921D;
     color:#204188;
@@ -33,23 +38,16 @@ form::placeholder{
 
 
 
-
-
-
 a{
     color:#F6921D ;
 }
 .btn-link{
     color:#F6921D ;
 
-
 }
 main img{
     width:50%;
-
-
 }
-
 main{
     text-align:center;
 }
@@ -72,8 +70,7 @@ main{
 .custom-button{
     color:#204188;
     background-color: #F6921D;
-
- width:100%;
+    width:100%;
     padding:3px;
     font-size:20px;
     border:2px solid rgba(85, 78, 78, 0.657);

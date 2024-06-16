@@ -18,7 +18,6 @@
     <div data-mdb-input-init class="form-outline mb-4">
     <?php echo $form->field($model, 'password')->passwordField() ?>
     </div>
-<button type="submit" class="btn btn-primary">Submit</button>
     <!-- 2 column grid layout for inline styling -->
     <div class="row mb-4">
         <div class="col d-flex justify-content-center">
@@ -36,7 +35,7 @@
     </div>
 
     <!-- Submit button -->
-    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
 
     <!-- Register buttons -->
     <div class="text-center">

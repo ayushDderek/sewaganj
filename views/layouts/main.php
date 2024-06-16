@@ -14,6 +14,12 @@ use app\core\Application;
     <link rel="stylesheet" href="/css_sg/footer.css">
     <link rel="stylesheet" href="/css_sg/style.css">
     <link rel="stylesheet" href="css_sg/home.css">
+    <link rel="stylesheet" href="css_sg/profile.css">
+    <link rel="stylesheet" href="css_sg/salon.css">
+    <link rel="stylesheet" href="css_sg/home-repair.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/warehouse.css">
+
 </head>
 <body>
 <!-- ------------ NavBar ------------ -->
@@ -21,7 +27,7 @@ use app\core\Application;
     <nav class="navbar wrapper">
         <div class="nav-section">
             <div class="logo">
-                <img id="nav-logo" src="assets/images/logo3.png" width="10px" alt="SewaGanj logo">
+                <a href="/"><img id="nav-logo" src="assets/images/logo3.png" width="10px" alt="SewaGanj logo"></a>
             </div>
 
 <!--            <div class="nav-section-elements">-->
@@ -36,7 +42,7 @@ use app\core\Application;
                 <input type="text" placeholder="location"></input>
             </div>
             <div class="warehouse">
-                <a href="#" class="warehouse"><img src="assets/images/warehouse.svg" width="30px" alt="warehouse logo">Warehouse</a>
+                <a href="/warehouse" class="warehouse"><img src="assets/images/warehouse.svg" width="30px" alt="warehouse logo">Warehouse</a>
             </div>
             <div class="nav-login-container">
             <?php if(Application::isGuest()) : ?>
@@ -122,6 +128,10 @@ use app\core\Application;
         </div>
     </div>
 </section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/js/cart.js"></script>
+
 
 </body>
 </html>

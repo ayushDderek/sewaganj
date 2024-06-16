@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    scroll-behavior:smooth;
+}
+:root{
+    --primary-color: #204188;
+    --secondary-color: #9BA4B5;
+    --tertiary-color: #F6921D;
+    --text-color: #204188;
+    --background-color: #9BA4B5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins";
+    font-size: 1.1rem;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+
+}
+body{
+    background-color: #faf0f9;
+}
+
+.salon-section{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* box-shadow: 1px 1px 1px #9BA4B5; */
+}
+.salon-price-category{
+    /* border: 1px solid grey; */
+    margin: 1.4rem 1rem;
+}
+.category{
+    border: 0.3px solid black;
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 0.7rem;
+    text-align: center;
+}
+.category a{
+    text-decoration: none;
+
+    color: black;
+}
+.category:hover{
+    transform: scale(1.03);
+    color: var(--tertiary-color);
+}
+.category:hover>a{
+    transform: scale(1.03);
+    color: var(--tertiary-color);
+}
+.salon-price-list{
+    margin: 1.2rem 1rem;
+    height: 70vh;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+.pricing{
+    /* text-align: center; */
+    border: 0.3px solid black;
+    border-radius: 7px;
+    margin: 0.7rem 0.5rem;
+}
+.pricing h2{
+    text-decoration: none;
+    color: var(--tertiary-color);
+    text-align: center;
+    margin: 2rem 0;
+}
+.pricing a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.pricing a:hover{
+    text-decoration: none;
+    color: var(--tertiary-color);
+    transform: scale(1.5px);
+
+}
+.pricing-product{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: left;
+    gap: 2rem;
+    margin: 2rem;
+}
+.pricing-product img{
+    width: 200px;
+    margin: 1rem;
+    float: right;
+}
+
+#text{
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    font-weight: bolder;
+}
+.copy-right{
+    text-align: center;
+
+}
