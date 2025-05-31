@@ -1,4 +1,5 @@
 <?php
+$sImage="";
 /** @var $cleaningServices */
 if (isset($_POST['service_id'])) {
     $sId = $_POST['service_id'];
@@ -22,8 +23,9 @@ if (isset($_POST['service_id'])) {
 
                     $service = get_object_vars($services);
                 ?>
-                    <div class="items" id="<?php echo $service['name'] ?>"><a href="#call1">
-                            <img src="./upload/services/<?php echo $service['image'] ?>">
+                    <div class="items" id="<?php echo $service['name'] ?>">
+                        <a href="#call1">
+                            <img src="./upload/services/<?php echo $service['image'] ?>" alt="">
                             <p><?php echo $service['name'] ?></p>
                         </a>
                     </div>
@@ -54,15 +56,7 @@ if (isset($_POST['service_id'])) {
                                 <img src="./upload/services/<?php echo $service['image'] ?>" alt="">
                             </div>
                             <div class="price"><p><?php echo $service['price'] ?></p></div>
-                            <button>Order Now</button>
-                            <form action="" class="form-submit" method="post">
-                                <input type="hidden" class="service_id" name="service_id" value="<?php echo $service['id']; ?>">
-                                <input type="hidden" class="service_name" name="service_name" value="<?php echo $service['name']; ?>">
-                                <input type="hidden" class="service_img" name="service_img" value="<?php echo $service['image']; ?>">
-                                <input type="hidden" class="service_price" name="service_price" value="<?php echo $service['price']; ?>">
-                                <input type="hidden" class="service_category" name="service_category" value="<?php echo $service['category']; ?>">
-                                <button class="cartload">Add to cart</button>
-                            </form>
+                            <button class="addToCartButton" data-product-id="<?= $service['id'] ?>">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -79,8 +73,9 @@ if (isset($_POST['service_id'])) {
                 <img src="./upload/services/<?= $sImage ?>" width="210px" alt="">
             </div>
             <div class="cart-item-details">
-                <h4 class="cart-item-ame"><?= $sName ?></h4>
-                <p class="price"><?= $sPrice ?></p>
+                <h4 class="cart-item-ame"><?= $sName ?? '' ?></h4>
+                <h2 id="output"><?= $outp ?? '' ?></h2>
+                <p class="price"><?= $sPrice ?? '' ?></p>
             </div>
         </div>
     </div>

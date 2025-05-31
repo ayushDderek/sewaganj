@@ -1,13 +1,10 @@
-body{
-/*background-color:rgb(183, 206, 206);*/
+/* body{
 
 margin: 0 auto;
 
 }
 
 
-
-/*  */
 .container-ware{
     display: block;
     margin-left:36px;
@@ -16,14 +13,10 @@ margin: 0 auto;
 }
 
 .first-row,.second-row{
-   
+
     display: flex;
     flex-direction:row;
-gap:20px;
-
-
-/* remove */
-
+    gap:20px;
 }
 
 
@@ -71,4 +64,4 @@ li{
 }
 .second-row{
     margin-top:30px;
-}
+} */

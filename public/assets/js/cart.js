@@ -1,34 +1,51 @@
-// $(document).ready(function() {
-//     $(".cartload").click(function (e) {
-//         e.preventDefault();
-//
-//         var $form = $(this).closest(".form-submit");
-//         var sId = $form.find('.service_id').val();
-//         var sName = $form.find('.service_name').val();
-//         var sImage = $form.find('.service_image').val();
-//         var sPrice = $form.find('.service_price').val();
-//         var sCategory = $form.find('.service_category').val();
-//
-//         $.ajax({
-//             url: '/cleaning',  // Replace with your route URL
-//             type: 'POST',        // Use the appropriate HTTP method (GET or POST)
-//             data: {
-//                 sId: sId,
-//                 sName: sName,
-//                 sImage: sImage,
-//                 sPrice: sPrice,
-//                 sCategory: sCategory
-//             },
-//             success: function(response) {
-//                 // Handle the response from the server
-//                 console.log('Success:', response);
-//             },
-//             error: function(error) {
-//                 // Handle any errors
-//                 console.log('Error:', error);
-//             }
-//         });
-//
-//     });
-//
+// document.getElementById('addToCartButton').addEventListener('click', function() {
+    
+//     addToCart(productId);
 // });
+
+// function addToCart(productId) {
+//     fetch('/cleaning', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//             // Uncomment the following line if your backend requires a CSRF token.
+//             // 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+//         },
+//         body: JSON.stringify({ productId: productId })
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         if (data.success) {
+//             alert('Product added to cart!');
+//         } else {
+//             alert('Failed to add product to cart.');
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//         alert('An error occurred while adding the product to the cart.');
+//     });
+// }
+
+$(document).ready(function(){
+    $('.addToCartButton').click(function(){
+        const productId = $(this).data('product-id');
+        
+        $.ajax({
+            type:'POST',
+            url:"/cleaning",
+            data:{
+                num1: productId,
+                num2: 2
+            },
+            success:function(data){
+                $('#output').html(data);
+            }
+        });
+    });
+});

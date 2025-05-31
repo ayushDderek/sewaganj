@@ -10,9 +10,16 @@ class ServiceController extends Controller
     public function cleaningService()
     {
         $services = new Service();
+        if(isset($_POST['num1']))
+        {
+
+            $output = ($_POST['num1']+$_POST['num2']) ?? '';
+            echo $output; exit;
+        }
         return $this->render('cleaning_service', [
             'cleaningServices' => $services->fetchAll()
         ]);
+
     }
 
     public function salonService()
@@ -28,5 +35,10 @@ class ServiceController extends Controller
     public function warehouse()
     {
         return $this->render('warehouse');
+    }
+
+    public function cart()
+    {
+        $data = json_decode(file_get_contents("php://input"), true);
     }
 }

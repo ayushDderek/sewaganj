@@ -43,6 +43,8 @@ $app->router->post('/cleaning', [ServiceController::class, 'cleaningService']);
 $app->router->get('/salon', [ServiceController::class, 'salonService']);
 $app->router->get('/home-repair', [ServiceController::class, 'homeRepair']);
 $app->router->get('/warehouse', [ServiceController::class, 'warehouse']);
+$app->router->get('/cart', [ServiceController::class, 'cart']);
+$app->router->post('/cart', [ServiceController::class, 'cart']);
 
 
 $app->router->get('/admin', [AdminController::class, 'dashboard']);

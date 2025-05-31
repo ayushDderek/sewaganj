@@ -24,10 +24,12 @@ class Router
     public function get($path, $callback)
     {
         $this->routes['get'][$path] = $callback;
+//        print_r($callback); die;
     }
 
     public function post($path, $callback)
     {
+
         $this->routes['post'][$path] = $callback;
     }
 
@@ -39,6 +41,15 @@ class Router
 
 
         $callback = $this->routes[$method][$path] ?? false;
+
+
+        $path = explode('/', $path);
+        if (count($path) > 2 && is_numeric(end($path)) ) {
+            $path = array_slice($path, -2, 1);
+            $path = "/" . "$path[0]";
+            $callback = $this->routes[$method][$path];
+        }
+
 
         if($callback === false){
             $this->response->setStatusCode(404);
